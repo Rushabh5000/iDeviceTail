@@ -11,7 +11,7 @@ import OSLog
 ///
 /// Strategy: poll incrementally from a saved position on a background queue,
 /// convert `OSLogEntryLog` -> `LogRecord`, hand batches to a sink.
-@available(iOS 15.0, macCatalyst 15.0, *)
+@available(iOS 15.0, macCatalyst 15.0, macOS 12.0, *)
 public final class OSLogStoreReader: @unchecked Sendable {
 
     public typealias Sink = ([LogRecord]) -> Void

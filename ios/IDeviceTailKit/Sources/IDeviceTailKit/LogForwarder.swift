@@ -110,7 +110,7 @@ public final class LogForwarder: @unchecked Sendable {
         lock.lock(); defer { lock.unlock() }
         started = false
         browser?.stop(); browser = nil
-        if #available(iOS 15.0, macCatalyst 15.0, *) {
+        if #available(iOS 15.0, macCatalyst 15.0, macOS 12.0, *) {
             (reader as? OSLogStoreReader)?.stop()
         }
         reader = nil
@@ -119,7 +119,7 @@ public final class LogForwarder: @unchecked Sendable {
 
     private func beginCapture(captureOSLog: Bool, backfillSeconds: TimeInterval) {
         guard captureOSLog else { return }
-        if #available(iOS 15.0, macCatalyst 15.0, *) {
+        if #available(iOS 15.0, macCatalyst 15.0, macOS 12.0, *) {
             let r = OSLogStoreReader(backfillSeconds: backfillSeconds) { [weak self] batch in
                 self?.client.send(batch)
             }

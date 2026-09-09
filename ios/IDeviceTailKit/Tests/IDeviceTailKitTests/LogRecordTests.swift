@@ -30,7 +30,7 @@ final class LogRecordTests: XCTestCase {
     }
 
     func testLevelStringMapping() {
-        if #available(iOS 15.0, macCatalyst 15.0, *) {
+        if #available(iOS 15.0, macCatalyst 15.0, macOS 12.0, *) {
             XCTAssertEqual(OSLogStoreReader.levelString(.fault), "fault")
             XCTAssertEqual(OSLogStoreReader.levelString(.debug), "debug")
             XCTAssertEqual(OSLogStoreReader.levelString(.undefined), "info")
