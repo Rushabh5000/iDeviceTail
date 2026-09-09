@@ -27,6 +27,15 @@ AltStore/Sideloadly (USB once on Windows). See `../docs/SETUP-iOS.md`.
 
 ## Use the Kit in your own app
 
+Add it in Xcode ▸ *Package Dependencies*, or in your own `Package.swift`:
+
+```swift
+.package(url: "https://github.com/Rushabh5000/idevicetail.git", from: "0.1.0")
+// then: .product(name: "IDeviceTailKit", package: "idevicetail")
+```
+
+(The repo‑root `Package.swift` re‑exports the sources under `ios/IDeviceTailKit/`.)
+
 ```swift
 import IDeviceTailKit
 LogForwarder.shared.start()                                  // auto-discover desktop

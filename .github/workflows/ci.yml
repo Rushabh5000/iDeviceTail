@@ -38,4 +38,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - run: swift test --package-path ios/IDeviceTailKit
+      - run: swift build          # root Package.swift (URL-consumable)
+      - run: swift test
