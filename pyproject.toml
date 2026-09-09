@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "idevicetail"
+version = "0.1.0"
+description = "Wireless log collection from your own iOS/iPadOS devices — system logs via pymobiledevice3 + an app-log agent, in one live web viewer. No cable."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Rushabh Shah" }]
+keywords = [
+    "ios", "ipados", "iphone", "ipad", "logs", "syslog", "console",
+    "oslog", "os_log", "logging", "pymobiledevice3", "wireless",
+    "developer-tools", "debugging", "crash-reports", "sysdiagnose", "bonjour",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: System :: Logging",
+    "Topic :: System :: Monitoring",
+]
+dependencies = [
+    "aiohttp>=3.9,<4",
+    "zeroconf>=0.132",
+    "aiosqlite>=0.19",
+]
+
+[project.optional-dependencies]
+device = ["pymobiledevice3>=4.14"]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "ruff>=0.5", "build>=1", "twine>=5"]
+
+[project.urls]
+Homepage = "https://github.com/Rushabh5000/idevicetail"
+Repository = "https://github.com/Rushabh5000/idevicetail"
+Documentation = "https://github.com/Rushabh5000/idevicetail/tree/main/docs"
+Issues = "https://github.com/Rushabh5000/idevicetail/issues"
+
+[project.scripts]
+idevicetail = "idevicetail.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "desktop" }
+
+[tool.setuptools.packages.find]
+where = ["desktop"]
+include = ["idevicetail*"]
+
+[tool.setuptools.package-data]
+idevicetail = ["web/*.html", "web/*.js", "web/*.css"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["desktop/tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

@@ -1,0 +1,8 @@
+include LICENSE README.md
+recursive-include desktop/idevicetail/web *.html *.js *.css
+recursive-include docs *.md
+recursive-include ios *.swift *.plist *.yml Package.swift README.md
+graft scripts
+global-exclude __pycache__ *.py[cod] *.sqlite *.sqlite-* .DS_Store
+prune data
+prune .venv

@@ -1,0 +1,12 @@
+# Core desktop runtime (Engine B + UI + discovery + storage). Cross-platform.
+aiohttp>=3.9,<4
+zeroconf>=0.132            # ProactorEventLoop-safe on Windows; needed for asyncio subprocess support
+aiosqlite>=0.19
+
+# Engine A (real system logs / crash / sysdiagnose). Optional, heavier deps.
+# Installed via:  pip install -e ".[device]"
+# pymobiledevice3>=4.14
+
+# Dev/test
+pytest>=8
+pytest-asyncio>=0.23

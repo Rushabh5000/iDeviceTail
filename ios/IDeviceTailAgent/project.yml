@@ -1,0 +1,33 @@
+# XcodeGen spec. Generate the project with:  xcodegen generate
+# (brew install xcodegen). Then open IDeviceTailAgent.xcodeproj.
+name: IDeviceTailAgent
+options:
+  bundleIdPrefix: com.example.idevicetail
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+
+packages:
+  IDeviceTailKit:
+    path: ../IDeviceTailKit
+
+targets:
+  IDeviceTailAgent:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+    dependencies:
+      - package: IDeviceTailKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.idevicetail.agent
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Sources/Info.plist
+        SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic
+        # set your Apple Developer Team here (or in Xcode > Signing & Capabilities)
+        DEVELOPMENT_TEAM: ""

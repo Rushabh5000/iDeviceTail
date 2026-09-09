@@ -1,0 +1,11 @@
+{
+  "name": "iDeviceTail",
+  "description": "Collect iOS/iPadOS device + app logs over Wi-Fi with no cable. pymobiledevice3 system-log engine + Swift app-log agent, merged into one live viewer.",
+  "url": "http://localhost:3017",
+  "ports": [3016, 3017],
+  "primaryPort": 3017,
+  "color": "#0a84ff",
+  "emoji": "📡",
+  "requiresDocker": false,
+  "order": 16
+}

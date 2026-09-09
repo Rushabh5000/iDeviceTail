@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>iDeviceTail</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<header>
+  <div class="brand">📡 iDeviceTail</div>
+  <div id="conn" class="pill pill-bad">connecting…</div>
+  <div class="grow"></div>
+  <div id="engine-a" class="pill pill-dim" title="Engine A / pymobiledevice3">Engine A: …</div>
+  <div id="stats" class="stats"></div>
+</header>
+
+<main>
+  <aside id="devices">
+    <div class="aside-head">
+      <h2>Devices</h2>
+      <button id="rescan" class="mini" title="Re-scan now">⟳</button>
+    </div>
+    <ul id="device-list"></ul>
+    <p class="hint" id="device-hint">
+      Devices appear automatically. Agent apps stream on connect; a paired device
+      (UDID shown) streams when you press <b>Start</b>.
+    </p>
+  </aside>
+
+  <section id="logs-pane">
+    <div class="toolbar">
+      <button id="b-start" class="primary" disabled>▶ Start</button>
+      <button id="b-stop" class="danger" disabled>■ Stop</button>
+      <span class="sep"></span>
+      <div class="menu-wrap">
+        <button id="b-openfile">📂 Open file ▾</button>
+        <div id="openfile-menu" class="menu" hidden>
+          <button data-act="open">Open in editor</button>
+          <button data-act="reveal">Reveal in folder</button>
+          <hr />
+          <a id="dl-log" href="/api/session-file?format=log" download>Download .log</a>
+          <a id="dl-ndjson" href="/api/session-file?format=ndjson" download>Download .ndjson</a>
+        </div>
+      </div>
+      <button id="b-export">⬇ Export view</button>
+      <button id="b-clear">🗑 Clear</button>
+      <span class="sep"></span>
+      <input id="f-search" type="search" placeholder="Keyword filter…" autocomplete="off" />
+      <label class="chk"><input id="f-regex" type="checkbox" /> regex</label>
+      <button id="f-ok">OK</button>
+      <span class="grow"></span>
+      <select id="f-level" title="minimum level">
+        <option value="debug">debug+</option>
+        <option value="info" selected>info+</option>
+        <option value="notice">notice+</option>
+        <option value="warning">warning+</option>
+        <option value="error">error+</option>
+        <option value="fault">fault</option>
+      </select>
+      <input id="f-process" list="processes" placeholder="process…" autocomplete="off" size="10" />
+      <datalist id="processes"></datalist>
+      <input id="f-subsystem" list="subsystems" placeholder="subsystem…" autocomplete="off" size="10" />
+      <datalist id="subsystems"></datalist>
+      <select id="f-source" title="source">
+        <option value="">all sources</option>
+        <option value="device-syslog">device-syslog</option>
+        <option value="device-oslog">device-oslog</option>
+        <option value="agent">agent</option>
+        <option value="crash">crash</option>
+        <option value="sysdiagnose">sysdiagnose</option>
+      </select>
+      <button id="b-pause">Pause</button>
+      <label class="chk"><input id="b-autoscroll" type="checkbox" checked /> follow</label>
+    </div>
+
+    <div id="scroller">
+      <div id="spacer"></div>
+      <div id="rows"></div>
+      <div id="empty" class="empty">No logs yet. Pick a device on the left and press <b>Start</b>.</div>
+    </div>
+    <div id="count" class="count"></div>
+  </section>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+
+<div id="detail" class="detail" hidden>
+  <div class="detail-head"><strong>Log detail</strong><button id="detail-close">✕</button></div>
+  <pre id="detail-body"></pre>
+</div>
+
+<div id="setup" class="modal" hidden>
+  <div class="modal-card">
+    <div class="detail-head"><strong id="setup-title">Device setup</strong><button id="setup-close">✕</button></div>
+    <div class="modal-body">
+      <p class="hint">One-time, needs the device connected by <b>USB</b> for these steps.
+        After that everything is wireless.</p>
+      <ol class="setup-steps">
+        <li><button data-act="pair">1 · Pair &amp; Trust</button><span> — then tap <b>Trust</b> + passcode on the device</span></li>
+        <li><button data-act="wifi-sync">2 · Enable Wi-Fi sync</button><span> — "Connect via network"</span></li>
+        <li><button data-act="devmode">3 · Enable Developer Mode</button><span> — device reboots; confirm in Settings ▸ Privacy &amp; Security</span></li>
+      </ol>
+      <pre id="setup-out" class="setup-out"></pre>
+    </div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
