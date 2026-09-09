@@ -1,7 +1,9 @@
 import Foundation
 import Network
 import OSLog
+#if canImport(UIKit)
 import UIKit
+#endif
 
 /// One-call entry point for an app that wants to stream its logs to the
 /// iDeviceTail desktop.
@@ -43,15 +45,40 @@ public final class LogForwarder: @unchecked Sendable {
     }
 
     private init() {
+        self.device = Self.currentDevice()
+        self.client = LogStreamClient(device: device)
+    }
+
+    private static func currentDevice() -> DeviceInfo {
+        let app = Bundle.main.bundleIdentifier ?? "unknown"
+        #if canImport(UIKit)
         let dev = UIDevice.current
-        self.device = DeviceInfo(
-            id: dev.identifierForVendor?.uuidString ?? UUID().uuidString,
+        return DeviceInfo(
+            id: dev.identifierForVendor?.uuidString ?? Self.stableID(),
             name: dev.name,
             model: Self.hardwareModel(),
             os: "\(dev.systemName) \(dev.systemVersion)",
-            app: Bundle.main.bundleIdentifier ?? "unknown"
+            app: app
         )
-        self.client = LogStreamClient(device: device)
+        #else
+        let os = ProcessInfo.processInfo.operatingSystemVersionString
+        return DeviceInfo(
+            id: Self.stableID(),
+            name: Host.current().localizedName ?? ProcessInfo.processInfo.hostName,
+            model: Self.hardwareModel(),
+            os: os,
+            app: app
+        )
+        #endif
+    }
+
+    /// A per-install UUID, persisted so reconnects keep the same device id.
+    private static func stableID() -> String {
+        let key = "com.idevicetail.installID"
+        if let s = UserDefaults.standard.string(forKey: key) { return s }
+        let s = UUID().uuidString
+        UserDefaults.standard.set(s, forKey: key)
+        return s
     }
 
     // MARK: start / stop
