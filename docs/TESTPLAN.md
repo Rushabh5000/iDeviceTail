@@ -10,7 +10,7 @@
 | `test_manager_and_devicelist.py` | `pymobiledevice3 usbmux list` JSON **and** table‑fallback parsing + dedupe by UDID; Bonjour sighting merges into a paired device **by IP**; `start_capture` rejects an agent‑only device. |
 | `test_server_smoke.py` | app builds; `/api/state`; **WS snapshot → live**: a published record arrives on the browser socket; unknown‑device start → 400; `/api/export?format=ndjson`. |
 
-Run: `pip install -e ".[dev]" && pytest -q`  (28 tests, ~10 s, no device needed).
+Run: `pip install -e ".[dev]" && pytest -q`  (43 tests, ~20 s, no device needed).
 
 ## Automated (iOS) — `swift test` in `ios/IDeviceTailKit`
 
