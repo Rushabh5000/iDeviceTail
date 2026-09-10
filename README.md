@@ -1,12 +1,9 @@
 # iDeviceTail — wireless iOS/iPadOS log collection
 
 [![CI](https://github.com/Rushabh5000/iDeviceTail/actions/workflows/ci.yml/badge.svg)](https://github.com/Rushabh5000/iDeviceTail/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python 3.10–3.13](https://img.shields.io/badge/python-3.10–3.13-3776AB.svg?logo=python&logoColor=white)](pyproject.toml)
-
-<!-- Add the PyPI badges after the first `v*` tag publishes the package:
 [![PyPI](https://img.shields.io/pypi/v/idevicetail.svg)](https://pypi.org/project/idevicetail/)
-[![Downloads](https://img.shields.io/pypi/dm/idevicetail.svg)](https://pypi.org/project/idevicetail/) -->
+[![Python](https://img.shields.io/pypi/pyversions/idevicetail.svg)](https://pypi.org/project/idevicetail/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 
 Collect and view logs from **your own** iPhones/iPads over Wi‑Fi, with **no cable during normal
