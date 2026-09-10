@@ -15,12 +15,12 @@ system — that is Engine A's job (desktop + `pymobiledevice3`).
 ## Build
 
 ```bash
-brew install xcodegen
-cd IDeviceTailAgent
-xcodegen generate
-open IDeviceTailAgent.xcodeproj      # set your signing Team, then Run
-cd ..            # repo root
-swift test       # Kit unit tests (needs a Mac)
+# from repo root:
+swift test                              # Kit unit tests (needs a Mac)
+
+brew install xcodegen                    # then build the demo app:
+cd ios/IDeviceTailAgent && xcodegen generate
+open IDeviceTailAgent.xcodeproj          # set your signing Team, then Run
 ```
 
 Install paths (no cable during use): Xcode wireless install, TestFlight, or
