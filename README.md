@@ -1,6 +1,6 @@
 # iDeviceTail — wireless iOS/iPadOS log collection
 
-[![CI](https://github.com/Rushabh5000/idevicetail/actions/workflows/ci.yml/badge.svg)](https://github.com/Rushabh5000/idevicetail/actions/workflows/ci.yml)
+[![CI](https://github.com/Rushabh5000/iDeviceTail/actions/workflows/ci.yml/badge.svg)](https://github.com/Rushabh5000/iDeviceTail/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10–3.13](https://img.shields.io/badge/python-3.10–3.13-3776AB.svg?logo=python&logoColor=white)](pyproject.toml)
 

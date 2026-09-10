@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "idevicetail"
+name = "iDeviceTail"
 version = "0.1.0"
 description = "Wireless log collection from your own iOS/iPadOS devices — system logs via pymobiledevice3 + an app-log agent, in one live web viewer. No cable."
 readme = "README.md"
@@ -42,10 +42,10 @@ device = ["pymobiledevice3>=4.14"]
 dev = ["pytest>=8", "pytest-asyncio>=0.23", "ruff>=0.5", "build>=1", "twine>=5"]
 
 [project.urls]
-Homepage = "https://github.com/Rushabh5000/idevicetail"
-Repository = "https://github.com/Rushabh5000/idevicetail"
-Documentation = "https://github.com/Rushabh5000/idevicetail/tree/main/docs"
-Issues = "https://github.com/Rushabh5000/idevicetail/issues"
+Homepage = "https://github.com/Rushabh5000/iDeviceTail"
+Repository = "https://github.com/Rushabh5000/iDeviceTail"
+Documentation = "https://github.com/Rushabh5000/iDeviceTail/tree/main/docs"
+Issues = "https://github.com/Rushabh5000/iDeviceTail/issues"
 
 [project.scripts]
 idevicetail = "idevicetail.cli:main"

@@ -30,8 +30,8 @@ AltStore/Sideloadly (USB once on Windows). See `../docs/SETUP-iOS.md`.
 Add it in Xcode ▸ *Package Dependencies*, or in your own `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/Rushabh5000/idevicetail.git", from: "0.1.0")
-// then: .product(name: "IDeviceTailKit", package: "idevicetail")
+.package(url: "https://github.com/Rushabh5000/iDeviceTail.git", from: "0.1.0")
+// then: .product(name: "IDeviceTailKit", package: "iDeviceTail")
 ```
 
 (The repo‑root `Package.swift` re‑exports the sources under `ios/IDeviceTailKit/`.)
