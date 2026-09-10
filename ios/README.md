@@ -19,7 +19,8 @@ brew install xcodegen
 cd IDeviceTailAgent
 xcodegen generate
 open IDeviceTailAgent.xcodeproj      # set your signing Team, then Run
-swift test --package-path ../IDeviceTailKit   # unit tests (needs a Mac)
+cd ..            # repo root
+swift test       # Kit unit tests (needs a Mac)
 ```
 
 Install paths (no cable during use): Xcode wireless install, TestFlight, or
