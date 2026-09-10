@@ -307,7 +307,7 @@ def _decode(b: bytes) -> str:
 
 _PYMD_MISSING = (
     "pymobiledevice3 not found or not runnable. Install Engine A support with:\n"
-    '    pip install "pymobiledevice3>=4.14"\n'
+    '    pip install "pymobiledevice3>=11"\n'
     "in the same environment, or set IDEVICETAIL_PYMD to its full path.\n"
     "NOTE: on Python 3.14 some pymobiledevice3 deps have no wheels yet — use a "
     "3.12/3.13 venv for Engine A."

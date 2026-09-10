@@ -36,7 +36,7 @@
   use `--tunnel` **with the device on USB** for that session, or run `syslog`
   mode wirelessly, or use a Mac.
 * iOS ≤ 16: no tunnel flags needed; drop `--tunnel`/`--rsd`.
-* "No module named pymobiledevice3" → `pip install "pymobiledevice3>=4.14"` in
+* "No module named pymobiledevice3" → `pip install "pymobiledevice3>=11"` in
   the same venv, or set `IDEVICETAIL_PYMD` to its full path.
 * **`pip install pymobiledevice3` fails building `lzfse` / `pylzss`**
   ("Microsoft Visual C++ 14.0 or greater is required"): you're on a Python

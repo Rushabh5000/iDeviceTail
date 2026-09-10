@@ -379,7 +379,7 @@ python -m idevicetail serve [--host H] [--port 3017] [--agent-port 45455] \
 | Symptom | Fix |
 |---|---|
 | **Device never appears** | Same Wi‑Fi? Disable "AP isolation"/guest network. For Engine A run `python -m idevicetail devices` — empty means not paired / Wi‑Fi‑sync off / device locked; redo **Setup** over USB. For the agent, use **Manual host** with the computer's IP. |
-| **Header says "Engine A: install pymobiledevice3"** | `pip install "pymobiledevice3>=4.14"` in the project's `.venv` (or run `start.bat`, which does it). Engine B works without it. |
+| **Header says "Engine A: install pymobiledevice3"** | `pip install "pymobiledevice3>=11"` in the project's `.venv` (or run `start.bat`, which does it). Engine B works without it. |
 | **`pair` says "accept the trust dialog"** | Unlock the device, tap **Trust**, enter passcode, click **Pair & Trust** again. Close Finder/iTunes/Xcode windows that hold the lockdown session. |
 | **Developer Mode toggle missing** | Run **Setup ▸ Enable Developer Mode** (or install any dev‑signed app). It appears after that. |
 | **`os_trace` stream exits immediately (iOS 17.4+, Windows/Linux)** | Expected over Wi‑Fi. Use **▶ Start** (`syslog`) wirelessly, or connect USB for that session and use `os_trace`, or use a Mac. |

@@ -152,7 +152,7 @@ def _doctor(args) -> int:
         print(f"pymobiledevice3 {ver}   (Engine A available)")
     else:
         print("pymobiledevice3 not found   (Engine A disabled; Engine B still works)")
-        print('  install with:  pip install "pymobiledevice3>=4.14"')
+        print('  install with:  pip install "pymobiledevice3>=11"')
         if sys.version_info >= (3, 14):
             print(f"  NOTE: you are on Python {sys.version.split()[0]}. Some pymobiledevice3")
             print("        deps (lzfse/pylzss) have no wheels for it yet and need a C compiler.")

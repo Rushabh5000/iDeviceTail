@@ -5,7 +5,7 @@ aiosqlite>=0.19
 
 # Engine A (real system logs / crash / sysdiagnose). Optional, heavier deps.
 # Installed via:  pip install -e ".[device]"
-# pymobiledevice3>=4.14
+# pymobiledevice3>=11
 
 # Dev/test
 pytest>=8

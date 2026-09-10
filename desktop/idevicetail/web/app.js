@@ -51,7 +51,7 @@ async function refreshState() {
     renderDevices(); syncToolbar(); updateCount();
     const ea = $("engine-a");
     if (state.engineA && state.engineA.available) { ea.textContent = "Engine A ✓"; ea.className = "pill pill-ok"; }
-    else { ea.textContent = "Engine A: install pymobiledevice3"; ea.className = "pill pill-dim"; ea.title = "pip install \"pymobiledevice3>=4.14\" — needed for full system logs"; }
+    else { ea.textContent = "Engine A: install pymobiledevice3"; ea.className = "pill pill-dim"; ea.title = "pip install \"pymobiledevice3>=11\" — needed for full system logs"; }
     const co = state.sessionFile && state.sessionFile.can_open;
     $("openfile-menu").querySelectorAll('[data-act]').forEach(b => b.style.display = co ? "block" : "none");
   } catch {}
