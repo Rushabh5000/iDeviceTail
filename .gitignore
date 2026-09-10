@@ -30,3 +30,6 @@ ios/**/*.xcworkspace/
 # OS
 .DS_Store
 Thumbs.db
+
+# Claude Code session/worktree dir
+.claude/
